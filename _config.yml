@@ -3,12 +3,32 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: cocoon-break的博客
 subtitle:
-description:
-author: John Doe
-language:
+description: 如果没有破茧的力量，至少应该有破茧的勇气。没有破茧的勇气，至少应该有破茧的姿态。
+author: cocoon-break
+language: zh-Hans
 timezone:
+
+#menu config eg:item-name link
+menu:
+  home: /
+  archives: /archives
+  about: /about
+  categories: /categories
+  tags: /tags
+  commonweal: /404.html  
+
+#menu_icons config menu icon 
+menu_icons:
+  enable: true
+  # Icon Mapping.
+  home: home
+  about: user
+  categories: th
+  tags: tags
+  archives: archive
+  commonweal: heartbeat  
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -60,10 +80,13 @@ time_format: HH:mm:ss
 per_page: 10
 pagination_dir: page
 
+#config avatar 
+avatar: /images/avatar.jpg
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
