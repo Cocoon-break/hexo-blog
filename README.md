@@ -16,7 +16,7 @@ hexo server
 
 ```ssh
 #清理本地缓存
-hexo c
+hexo clean
 #把md生成html
 hexo g
 #发布到github上
