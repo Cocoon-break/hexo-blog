@@ -22,6 +22,8 @@ supervisor 是基于python的进程管理工具
 
 - 创建supervisord 放在 init.d目录 下  **注：** prog_bin 为supervisors 可执行文件位置
 
+   <!-- more -->
+
    ```ssh
    #!/bin/sh
    #

@@ -57,6 +57,8 @@ tags: Linux
    /opt/megvii
    ```
 
+   <!-- more -->
+
    spec脚本中各个配置项说明
 
    ```sh

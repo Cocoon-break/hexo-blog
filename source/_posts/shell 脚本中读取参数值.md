@@ -1,5 +1,5 @@
 ---
-title: Linux下打RPM包
+title: shell 脚本中读取参数值
 date: 2017-05-25 11:14:12
 tags: Linux
 ---
@@ -27,7 +27,7 @@ shell 脚本中读取参数值
 
    执行的结果就是打印了两个参数，这个种方式的弊端就是，如果参数的位置传错了，那么$1 的值就不是haha了，当然可以使用这种方式写，就是可读性不太高 哈。
 
-   ​
+   <!-- more -->
 
 ## 指定key 获取参数
 
@@ -40,6 +40,7 @@ shell 脚本中读取参数值
    IP_VALUE=""; NODE_VALUE="";VIP_VALUE="";
 
    while true;do 
+   	if [ ! $2 ]; then break; fi
    	case $1 in
    		-i|--ip)
    			case $2 in
@@ -57,7 +58,7 @@ shell 脚本中读取参数值
    			*)NODE_VALUE=$2;shift 2;;
    			esac;;
    		 --) shift ;break ;;
-   		 *) echo "error: get options params failed !";exit 1;;
+   		 *) break;;
    		esac
    done
 

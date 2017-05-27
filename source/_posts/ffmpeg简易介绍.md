@@ -19,6 +19,8 @@ tags:
 
 以下使用的平台都为Mac系统下
 
+<!-- more -->
+
 ## 开始使用
 
 1. 打开终端，查看ffmpeg帮助文档，简要了解ffmpeg的使用
@@ -45,6 +47,8 @@ tags:
    ```
 
    重点是关注 usage: ffmpeg [options][[infile options] -i infile]... {[outfile options] outfile}… 这句是说ffmpeg 的主要用法
+
+   ​
 
 2. 查看ffmpeg 支持的格式
 
