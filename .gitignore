@@ -2,3 +2,6 @@
 .idea/
 node_modules/
 .deploy_git/
+public/
+themes/yilia
+

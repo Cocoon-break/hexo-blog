@@ -31,7 +31,25 @@ tags: 技巧
 
 
 
-## 安装oh-my-zsh
+## Mac下shell介绍
+
+Shell 是LInux/Unix的一个外壳，你理解成衣服也行。它负责外界与Linux内核的交互，接收用户或其他应用程序的命令，然后把这些命令转化成内核能理解的语言，传给内核，内核是真正干活的，干完之后在把结果返回给用户或应用程序。
+
+
+
+Linux/Unix 提供了很多种shell，常用的shell有这么几种，sh、bash、csh等。想知道系统有几种shell，可以通过以下命令查看。
+
+```sh
+cat /etc/shells
+```
+
+
+
+在 Linux 里执行这个命令和 Mac 略有不同，你会发现 Mac 多了一个 zsh，也就是说 OS X 系统预装了个 zsh，目前常用的 Linux 系统和 OS X 系统的默认 Shell 都是 bash，但是真正强大的 Shell 是深藏不露的 zsh，这货绝对是马车中的跑车，跑车中的飞行车，史称『终极 Shell』，但是由于配置过于复杂，所以初期无人问津，很多人跑过来看看 zsh 的配置指南，什么都不说转身就走了。直到有一天，国外有个穷极无聊的程序员开发出了一个能够让你快速上手的zsh项目，叫做「oh my zsh」
+
+
+
+### 安装使用on-my-zsh
 
 1. 通过git 把oh-my-zsh 下载下来
 
@@ -58,9 +76,11 @@ tags: 技巧
    ZSH_THEME="af-magic"
    ```
 
-4. oh-my-zsh 就配置完了
+4. oh-my-zsh 就配置完了。这里只是简单的介绍oh-my-zsh。oh-my-zsh  功能还是很丰富的，更多oh-my-zsh请移步[oh-my-zsh GitHub地址](https://github.com/robbyrussell/oh-my-zsh)
 
 ## 安装tmux
+
+Tmux 是一个工具，用于在一个终端窗口中运行多个终端会话。不仅如此，你还可以通过 Tmux 使终端会话运行于后台或是按需接入、断开会话，这个功能非常实用。
 
 1. 先安装Homebrew，这个是Mac平台的包管理器。用来安装一些开发工具还是很方便。Mac系统自带了ruby的环境，我们通过ruby来安装Homebrew
 
@@ -68,7 +88,7 @@ tags: 技巧
    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
    ```
 
-2. 通过homebrew 安装oh-my-zsh
+2. 通过homebrew 安装tmux
 
    ```sh
    brew install tmux
