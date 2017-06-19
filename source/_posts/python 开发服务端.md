@@ -14,8 +14,6 @@ tags: python
 
   如果Mac上装了多个版本的Python，可以同过`python  --version`查看，然后会将包安装到`/usr/local/lib/pythonxxx/site-packages`下
 
-  ​
-
 - 创建虚拟开发环境
 
   在使用Python开发的时候，各个应用所需的Python版本可能不同，这时我们就需要一个独立的Python开发环境。virtualenv就是用来为一个应用创建一套“隔离”的Python运行环境。
