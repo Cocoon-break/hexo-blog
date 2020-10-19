@@ -1,7 +1,10 @@
 ---
 title: shell 脚本中读取参数值
 date: 2017-05-25 11:14:12
-tags: Linux
+tags: 
+- shell
+categories:
+- Linux
 ---
 
 shell 脚本中读取参数值

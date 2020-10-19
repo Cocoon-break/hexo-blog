@@ -1,15 +1,22 @@
 ---
 title: supervisor linux后台进程管理利器
 date: 2017-04-28 11:24:12
-tags: Linux
+tags: 
+- Python
+- Linux
+categories:
+- 开源工具
 ---
 
-supervisor 是基于python的进程管理工具
+supervisor 是基于python的进程管理工具，比如进程意外退出了，可以自动将退出的进程拉起，重新运行。
 
 ## install online
 
 - ubuntu 系统安装 apt-get install supervisor
+
 - 也可以通过pip install supervisor 但是需要手动启动
+
+  
 ## install offline
 
 - 下载安装包和依赖包详见官网 [https://pypi.python.org/pypi/supervisor] 3.3.1版本
@@ -18,7 +25,7 @@ supervisor 是基于python的进程管理工具
 
 - 创建配置文件
 
-- 执行`echo_supervisord_conf > /etc/supervisor/supervisord.conf `创建配置文件
+- 执行`echo supervisord_conf > /etc/supervisor/supervisord.conf `创建配置文件
 
 - 创建supervisord 放在 init.d目录 下  **注：** prog_bin 为supervisors 可执行文件位置
 
@@ -105,17 +112,21 @@ supervisor 是基于python的进程管理工具
 
 在etc/supervisor.conf.d 目录下创建每个进程对应的配置文件 如：work.conf
 具体配置
-	directory= /opt/faceid/worker            //工程文件目录
-	command= /opt/faceid/worker/start.sh  //启动命令
-	autostart=true                                           //是否自启
-	autorestart=true                                        //是否自动重启
-	startretries= 10000                                  //重试时间
-	startsecs=1                                                //启动时间
-	stopasgroup=true
-	killasgroup=true``
-	stdout_logfile_maxbytes = 50MB
-	stdout_logfile_backups = 10
-	stdout_logfile = /var/log/megvii/%(program_name)s.log
+
+```shell
+directory= /opt/faceid/worker#工程文件目录
+command= /opt/faceid/worker/start.sh#启动命令
+autostart=true#是否自启
+autorestart=true#是否自动重启
+startretries= 10000#重试次数
+startsecs=1#启动时间
+stopasgroup=true
+killasgroup=true
+stdout_logfile_maxbytes=50MB
+stdout_logfile_backups=10
+stdout_logfile=å/var/log/megvii/%(program_name)s.log	
+```
+
 ## common command
 
 - supervisorctl status 查看各个进程的状态
@@ -129,7 +140,7 @@ supervisor 是基于python的进程管理工具
 
 - Error: Another program is already listening on a port
 
-  ```ssh
+  ```shell
   find / -name supervisor.sock
   unlink /***/supervisor.sock
   ```
@@ -140,16 +151,16 @@ supervisor 是基于python的进程管理工具
 
   编辑文件/etc/supervisord.conf  中的
 
-  ```
+  ```shell
   file = /tmp/supervisor.sock ;改成file = /var/run/supervisor.sock
   ```
-
-​	然后执行
-
-```ssh
-touch /var/run/supervisor.sock
-service supervisord restart
-```
+  
+  然后执行
+  
+  ```shell
+  touch /var/run/supervisor.sock
+  service supervisord restart
+  ```
 
 -  ERROR (spawn error)
 
@@ -171,3 +182,11 @@ service supervisord restart
   [root@testlm01v /etc/ld.so.conf.d]# cat python.conf 
   /usr/local/lib
   ```
+  
+-  普通用户权限
+
+   安装需要root用户，如果维护通过非root用户，可以如下修改 
+
+   - 修改配置文件/etc/supervisord.conf中[unix_http_server] ;chown=nobody:nogroup 去掉;，修改为相应的user:group （也可以改前面的chmod为777） 
+   - 修改/etc/supervisord.conf.d权限，让相应用户可以增删改相应的配置文件
+

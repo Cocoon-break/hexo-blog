@@ -1,10 +1,13 @@
 ---
 title: Linux下打RPM包
 date: 2017-05-15 14:34:12
-tags: Linux
+tags: 
+- Linux
+categories:
+- Linux
 ---
 
-
+centos 6.5下打rpm包，由于不想给客户更多的安装信息，所以将服务打成rpm包，方便客户安装。不是计划给系统使用建议还是不要将服务打成RPM包。以下的打包也是简易的打包流程，仅记录使用。
 
 ## 工具准备
 

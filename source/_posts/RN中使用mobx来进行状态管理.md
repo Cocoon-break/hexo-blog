@@ -1,7 +1,10 @@
 ---
 title: RN 中使用mobx来进行状态管理
 date: 2017-06-13 11:25:12
-tags: react-native
+tags: 
+- react-native
+categories:
+- 前端
 ---
 
 在使用RN开发app过程中需要状态管理，也就是state 这个概念，由此衍生出来的两个状态管理的框架，一个是redux，另一个就是mobx了。这两个我都用过，今天就先来介绍下mobx 在开发RN中的使用。实际上不使用状态管理的框架，你也是能够进行开发的，但是随着项目的开发以及项目的壮大，会发现没有状态管理，这个工程越来越难维护。当然redux和mobx也都是可以使用在react的web项目中。

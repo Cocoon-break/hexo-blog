@@ -1,8 +1,10 @@
 ---
 title: ffmpeg简易介绍
 date: 2017-05-22 14:34:12
-tags: 扩展
-
+tags: 
+- 扩展
+categories:
+- 开源工具
 ---
 
 ## 媒体文件结构
@@ -48,7 +50,7 @@ tags: 扩展
 
    重点是关注 usage: ffmpeg [options][[infile options] -i infile]... {[outfile options] outfile}… 这句是说ffmpeg 的主要用法
 
-   ​
+   
 
 2. 查看ffmpeg 支持的格式
 
@@ -162,8 +164,103 @@ tags: 扩展
    -disposition        disposition
    ```
 
-   [文章参考](https://github.com/FiveYellowMice/how-to-convert-videos-with-ffmpeg-zh) 
+   #### ffmpeg常用的日常命令
 
-   ​
+   **关于FFmpeg的具体技术及参数细节，可以参考**[**ffmpeg官方文档**](https://ffmpeg.org/documentation.html)**，以下介绍一些常用的ffmpeg命令。**
+   
+   1. H264编码的其他格式转换TS
+   
+      ```shell
+      ffmpeg -i input.(mp4、avi、264) -vcodec copy output.ts
+      ffmpeg -i input.(mp4、aiv、264) -vcodec libx264 -an out.ts
+      ```
+   
+      说明： 一般转换格式用于离线视频识别和live555转发，多数因使用ts格式文件，故需要使用ffmpeg进行转换。
+   
+      -vcodec： vcodec 参数使用copy，表示复制原编码，而不进行重编码，效率比较高，默认都是h264编码视频。
+   
+   2. 视频转帧图片
+   
+      ```shell
+      ffmpeg -i input.(mp4、avi、264) -r 25 -f image2 ./path/%05d.png
+      ```
+   
+      将视频中每一帧切出来，可用作测试人脸检测模块。
+   
+      -r：表示帧率，25即每秒25帧来处理帧。
+   
+      -f：表示输出格式，此处为image2格式。
+   
+       ./path/%05d.png：以png格式输出，path为路径，%05d为通配符，表示以5位数字命名。
+   
+      批量转图：
+   
+      ```shell
+      find ./ -name "*.mp4" | cut -c 3- | xargs -i ffmpeg -i ./{} -r 25 -f image2 ./path/%05d{}.png
+      ```
+   
+   3. 帧图片转视频
+   
+      ```shell
+      ffmpeg -i ./path/%05d.png -r 25 -vcodec h264 output.ts
+      ```
+   
+      将连续的帧图片，转制为视频。
+   
+   4. 视频帧率处理
+   
+      ```shell
+      ffmpeg -i input.ts -vcode h264 -r 20 output.ts
+      ```
+   
+      模拟不同帧率下的视频。根据参数-r，决定处理帧率的数值。
+   
+   5. 从相机视频流录制ts或mp4格式的视频
+   
+      ```shell
+      ffmpeg -t 3600 -rtsp_transport tcp -i rtsp://10.201.105.51/live1.sdp -vcodec copy test06223600.ts
+      ```
+   
+      说明：tcp协议
+   
+   6. 截取视频指令
+   
+      ```shell
+      ffmpeg -ss START -vsync 0 -t DURATION -i INPUT -vcodec VIDEOCODEC-acodec AUDIOCODEC OUTPUT
+      ```
+   
+      说明：
+   
+      ​     -ss 视频开始时刻，格式为00:00:00，比如，从第5秒开始录制，则为00:00:05
+   
+      ​     -t 视频持续时长，格式为00:00:00，比如，要录制10秒钟的视频，则为00:00:10
+   
+   7. 合并视频指令
+   
+      ```shell
+      ffmpeg -i "concat:intermediate1.ts|intermediate2.ts" -c copy -bsf:a aac_adtstoasc output.ts
+      ```
+   
+   8. 视频旋转
+   
+       ```shell
+      find ./ -name "*.mp4" | cut -c 3- | xargs -i ffmpeg -i ./{} -vf "transpose=1" -vcodec libx264 -an ./rota/{}
+       ```
+   
+   9. 图片选择
+   
+      ```shell
+      convert example.jpg -rotate 90 example-rotated.jpg
+      ```
+   
+   10. 获取视频文件的帧数
+   
+       ```shell
+       ffmpeg -i 1234.mp4 -vcodec copy -acodec copy -f null /dev/null 2>&1 | grep 'frame='
+       ```
+   
+   [文章参考](https://github.com/FiveYellowMice/how-to-convert-videos-with-ffmpeg-zh) 
+   
+   
 
 

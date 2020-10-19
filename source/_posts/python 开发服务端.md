@@ -1,7 +1,10 @@
 ---
 title: python 开发服务端
 date: 2017-06-19 10:19:31
-tags: python
+tags:
+- Python
+categories:
+- Python
 ---
 
 最新在开发微信公众号，选择了python做为后端开发的语言。之所以选择python作为开发语言，是因为python开发起来比较快，而且也容易上手。选用的python版本是python2.7.13
@@ -130,41 +133,32 @@ if __name__ == '__main__':
   import logging
   from logging.handlers import RotatingFileHandler
   from . import config
-
+  
   log_filename = 'output.log'
   logging.basicConfig(level=logging.DEBUG,
                       format='%(filename)s:%(lineno)s - %(asctime)s %(levelname)s %(message)s',
                       filename=log_filename,
                       filemode='a')
-
+  
   logger = logging.getLogger()
   log_handler = logging.handlers.WatchedFileHandler(log_filename)
   logger.addHandler(log_handler)
-
-
+   
   def debug(msg):
       # logging.debug(msg)
       logger.debug(msg)
-
-
+  
   def info(msg):
       # logging.info(msg)
       logger.info(msg)
-
-
+  
   def warning(msg):
       # logging.warning(msg)
       logger.warning(msg)
-
-
+  
   def error(msg):
       # logging.error(msg)
       logger.error(msg)
+      
   ```
-
-  ​
-
-其他的一些在这里就不在过多的介绍了，我做了一个python开发后端rest接口的模版工程，放在GitHub上，有兴趣的话可以看看[python_tmplate](https://github.com/Cocoon-break/python_tmplate)  
-
-
-
+  其他的一些在这里就不在过多的介绍了，我做了一个python开发后端rest接口的模版工程，放在GitHub上，有兴趣的话可以看看[python_tmplate](https://github.com/Cocoon-break/python_tmplate) 

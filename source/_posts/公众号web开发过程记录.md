@@ -1,7 +1,10 @@
 ---
 title: 公众号开发前端
 date: 2017-06-19 11:33:30
-tags: 前端
+tags: 
+- react web
+categories:
+- 前端
 ---
 
 上一篇讲了微信公众号后端的开发，这一篇是讲讲前端页面的开发。前端的技术栈用的是react。这里介绍了在开发过程中遇到的一些问题。以及一些知识点的介绍
@@ -190,7 +193,7 @@ module.exports = {
   <body style="width: 100%;" onload="setHeight()"></body>
    ```
 
-  ​
+  
 
 ## 开源库使用时遇到的问题
 
@@ -238,5 +241,5 @@ module.exports = {
   //说明：通过proxy配置可以最终发出的请求路径为http://localhost:500/show_operation/1
   ```
 
-  ​
+  
 

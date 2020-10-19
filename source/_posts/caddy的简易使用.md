@@ -1,10 +1,13 @@
 ---
 title: caddy的简易使用
 date: 2017-06-30 15:47:20
-tags: Linux
+tags: 
+- Linux
+categories:
+- 开源工具
 ---
 
-​	caddy是一个开源的，使用golang 编写，支持HTTPS的web服务器，同时也可以作为负载均衡器使用，caddy的使用非常简单，只要一个二进制包就可以执行，不用像apache 或者nginx 配置起来那么麻烦。
+​	caddy是一个开源的，使用golang 编写，支持HTTPS的web服务器，同时也可以作为负载均衡器使用，caddy的使用非常简单，只要一个二进制包就可以执行，不用像nginx 配置起来那么麻烦。
 
 ​	 [caddy下载](https://caddyserver.com/download)
 
@@ -48,6 +51,6 @@ tags: Linux
 
    注：caddy监听本机的`1234`端口，指定了访问的根目录为/opt/test,如果/opt/test 目录下没有index.html,那么访问`http://ip:1234` 会将/opt/test目录结构展现到页面中。ext 表示可以忽略文件的后缀
 
-  ​
+  
 
 更多的配置可以访问 [caddy配置文件](https://caddyserver.com/docs/http-caddyfile)

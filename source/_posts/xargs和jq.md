@@ -1,7 +1,10 @@
 ---
 title: xargs 和 jq
 date: 2017-07-05 13:45:12
-tags: Linux
+tags: 
+- shell
+categories:
+- Linux
 ---
 
 ​	xargs是Linux系统上自带的命令，xargs命令是给其他命令传递参数的一个过滤器，也是组合多个命令的一个工具。jq 不是Linux系统自带的命令，需要自行安装。jq主要在Linux上解析json。
