@@ -2,7 +2,7 @@
 title: MySQL系列二之基础使用
 date: 2018-08-15 20:37:01
 index_img:
-- /images/mysql/join.jpg
+- /images/mysql/008_mysql_0.jpg
 tags: 
 - mysql
 categories:

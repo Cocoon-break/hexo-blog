@@ -2,7 +2,7 @@
 title: MySQL系列五之原理及性能
 date: 2018-08-25 21:17:22
 index_img:
-- /images/mysql/logo-mysql.png
+- /images/mysql/011_mysql_0.jpg
 tags: 
 - mysql
 categories:

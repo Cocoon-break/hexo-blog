@@ -2,7 +2,7 @@
 title: MySQL系列三之事务和锁
 date: 2018-08-18 23:17:01
 index_img:
-- /images/mysql/logo-mysql.png
+- /images/mysql/009_mysql_0.jpg
 tags: 
 - mysql
 categories:

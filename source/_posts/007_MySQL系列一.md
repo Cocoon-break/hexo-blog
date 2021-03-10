@@ -2,7 +2,7 @@
 title: MySQL系列一之基础使用
 date: 2018-08-12 19:47:00
 index_img:
-- /images/mysql/logo-mysql.png
+- /images/mysql/007_mysql_0.jpg
 tags: 
 - mysql
 categories:

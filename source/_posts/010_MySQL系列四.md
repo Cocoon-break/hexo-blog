@@ -2,7 +2,7 @@
 title: MySQL系列四之执行流程及架构
 date: 2018-08-22 22:37:01
 index_img:
-- /images/mysql/MySQL_Architecture.jpg
+- /images/mysql/010_mysql_0.jpg
 tags: 
 - mysql
 categories:
@@ -47,7 +47,7 @@ mysql 逻辑架构主要分为三层
 
 MySQL首先是一个网络程序，其在TCP之上定义了自己的[应用层协议](https://dev.mysql.com/doc/internals/en/client-server-protocol.html)。所以要使用MySQL，我们可以编写代码，跟MySQL Server建立TCP连接，之后按照其定义好的协议进行交互。当然自己编写代码是比较麻烦的，我们也可以直接通过SDK进行链接如JDBC，ODBC等。当客户端连接到服务器时，客户端将获得自己的线程进行连接。来自该客户端的所有查询在该指定线程内执行。该线程由服务器缓存，因此不需要为每个新连接创建和销毁它们。
 
-#####身份验证
+##### 身份验证
 
 每当客户端连接到MySQL服务器时，服务器都会在服务器端执行身份验证。身份验证基于用户名，客户端主机和客户端用户密码。
 

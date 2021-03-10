@@ -2,7 +2,7 @@
 title: golang 之 slice & defer 关键字
 date: 2018-09-10 19:53:22
 index_img:
-- /images/golang/logo.jpg
+- /images/golang/013_go_0.jpg
 tags: 
 - golang
 categories:

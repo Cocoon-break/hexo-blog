@@ -2,7 +2,7 @@
 title: golang 之 cgo
 date: 2018-08-30 18:00:12
 index_img:
-- /images/golang/string.jpg
+- /images/golang/012_cgo_0.jpg
 tags: 
 - golang cgo
 categories:

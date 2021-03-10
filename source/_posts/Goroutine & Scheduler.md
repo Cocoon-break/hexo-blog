@@ -1,5 +1,5 @@
 ---
-title: 并发模型及线程模型概述
+title: golang之goroutine
 date: 2020-08-10 20:40:22
 index_img:
 - /images/golang/goroutine.jpg
